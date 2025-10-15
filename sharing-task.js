@@ -89,3 +89,73 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
+//Task 1: Generate Attendee Badge
+
+function generateBadge(name, role) {
+  // Capitalize the first letter of role and keep the rest lowercase
+  const formattedRole = role.charAt(0).toUpperCase() + role.slice(1).toLowerCase();
+  return `Name: ${name}, Role: ${formattedRole}`;
+}
+
+
+//Task 2: Calculate Event Cost
+
+function calculateEventCost(numAttendees, costPerAttendee) {
+  let total = numAttendees * costPerAttendee;
+  if (numAttendees > 100) {
+    total = total * 0.9; // Apply 10% discount
+  }
+  return total;
+}
+
+
+//Task 3: Validate Email
+
+function isValidEmail(email) {
+  return email.includes("@") && email.includes(".");
+}
+/*Input: email (string)
+
+Output: Boolean (true/false)
+
+Collaborative Steps
+Design Phase
+Brainstorming: Clarify inputs (parameters) and expected outputs (return value) for each function.
+
+Roles:
+
+Pseudocode Writer drafts logic steps (see commented steps in code).
+
+Initial Coder translates to code.
+
+Testers/Debuggers write and review test cases.
+
+Implementation Phase
+Work together to write and refine functions.
+
+Ensure use of parameters and return statements for clarity and reuse.
+
+Testing Phase
+Members provide test cases:*/
+
+
+// Test Task 1
+console.log(generateBadge("Alice", "speaker")); // "Name: Alice, Role: Speaker"
+console.log(generateBadge("Bob", "attendee"));  // "Name: Bob, Role: Attendee"
+console.log(generateBadge("Maya", "ORGANIZER")); // "Name: Maya, Role: Organizer"
+
+// Test Task 2
+console.log(calculateEventCost(120, 25)); // 2700
+console.log(calculateEventCost(100, 25)); // 2500
+console.log(calculateEventCost(101, 25)); // 2272.5
+
+// Test Task 3
+console.log(isValidEmail("alice@example.com")); // true
+console.log(isValidEmail("bobexample.com"));    // false
+console.log(isValidEmail("maya@org"));          // false
+
+/*Presentation Phase
+Present functions, describe choices, detail the team's workflow.
+
+Discuss challenges, decisions for code formatting, and handling edge cases.*/
